@@ -1,4 +1,4 @@
-FitSphere — Smart Workout Tracker
+FitSphere — Smart Workout Trainer
 
 FitSphere is a real-time AI workout tracker built with TensorFlow.js MoveNet.
 It detects exercises through your webcam, counts reps, calculates calories burned, and even talks to you with voice feedback.
