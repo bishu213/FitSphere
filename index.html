@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FitAI — Home Trainer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Libraries (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="logo" onerror="this.style.display='none'"/>
+      <div class="brand-text">
+        <h1>FitSphere</h1>
+        <small>Your Smart Home Trainer</small>
+      </div>
+    </div>
+    <nav>
+      <a href="dashboard.html" class="btn small">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="camera-area">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="overlay"></canvas>
+
+      <div class="hud">
+        <div class="exercise-row">
+          <div id="exerciseName" class="exercise-name">Detected: <span>—</span></div>
+          <div id="modeHint" class="mode-hint">Say "start" to begin</div>
+        </div>
+
+        <div id="counterBox" class="counter">0</div>
+
+        <div id="feedback" class="feedback">Form looks good</div>
+
+        <div class="controls">
+          <button id="startBtn" class="btn">Start</button>
+          <button id="pauseBtn" class="btn outline">Pause</button>
+          <button id="endBtn" class="btn danger">End Session</button>
+          <button id="voiceToggle" class="btn small">Voice: On</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="stats-panel">
+      <div class="stat">
+        <label>Reps</label>
+        <div id="repStat">0</div>
+      </div>
+      <div class="stat">
+        <label>Duration</label>
+        <div id="timeStat">00:00</div>
+      </div>
+      <div class="stat">
+        <label>Calories Burned</label>
+        <div id="caloriesStat">0 kcal</div>
+      </div>
+      <div class="stat">
+        <label>Form Accuracy</label>
+        <div id="accuracyStat">0%</div>
+      </div>
+
+      <div class="session-log">
+        <h3>Last session</h3>
+        <div id="lastSession">No session yet</div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <small>Made with ❤️ — FitSphere</small>
+  </footer>
+
+  <!-- App scripts -->
+  <script src="js/poseUtils.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
